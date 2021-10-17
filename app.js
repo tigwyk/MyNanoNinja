@@ -9,6 +9,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+console.log("About to require passport");
 var passport = require('passport');
 var flash = require('connect-flash');
 var bodyParser = require('body-parser');
