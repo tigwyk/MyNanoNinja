@@ -1,4 +1,4 @@
-console.log('=== STARING NANO NINJA CRON ===');
+console.log('=== STARTING BANANO NINJA CRON ===');
 
 require('dotenv').config()
 

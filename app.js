@@ -1,4 +1,4 @@
-console.log('=== STARING NANO NINJA ===');
+console.log('=== STARTING BANANO NINJA ===');
 
 var Raven = require('raven');
 Raven.config(process.env.SENTRY_URL).install();
