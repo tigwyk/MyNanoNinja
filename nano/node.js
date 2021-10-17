@@ -6,7 +6,7 @@ const request = require('request');
 console.log('Using internal node at port ' + process.env.NODE_INTERNAL);
 
 const node = new NanoNode(process.env.NODE_INTERNAL);
-node.peers = ['5.189.128.113:7075', 'rai.raiblocks.net:7075'];
+node.peers = ['178.128.46.252:7071', '173.75.129.5:7071'];
 node.minimalConfirmAck = true;
 node.maxPeers = 1000;
 
