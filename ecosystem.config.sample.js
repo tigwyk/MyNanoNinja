@@ -7,17 +7,17 @@ module.exports = {
 
     // First application
     {
-      name      : 'My Nano Ninja',
+      name      : 'My Banano Ninja',
       script    : 'bin/www',
       "log_date_format" : "YYYY-MM-DD HH:mm:ss",
       env: {
         NODE_ENV: 'production',
-        DOMAIN: 'https://mynano.ninja',
-        NODE_RPC: 'http://[::1]:7076',
+        DOMAIN: 'https://mybanano.ninja',
+        NODE_RPC: 'http://[::1]:7072',
         NODE_INTERNAL: '12000',
-        MONGO_URL: 'mongodb://localhost:27017/mynanoninja',
-        MONGO_SESSIONURL: 'mongodb://localhost:27017/mynanoninja-session',
-        SESSION_SECRET: 'ohyeahnanoisgreat',
+        MONGO_URL: 'mongodb://localhost:27017/mybananoninja',
+        MONGO_SESSIONURL: 'mongodb://localhost:27017/mybananoninja-session',
+        SESSION_SECRET: 'ohyeahbananoisgreat',
         SENTRY_URL: '',
         FACEBOOK_CLIENTID: '',
         FACEBOOK_CLIENTSECRET: '',
@@ -32,7 +32,7 @@ module.exports = {
         DISCORD_CLIENTID: '',
         DISCORD_CLIENTSECRET: '',
         EMAIL_HOST: 'smtp.myhost.com',
-        EMAIL_USER: 'alert@mynano.ninja',
+        EMAIL_USER: 'alert@mybanano.ninja',
         EMAIL_PASS: 'mypassword',
         DPOW_USER: 'user',
         DPOW_KEY: 'longhash',
@@ -45,18 +45,18 @@ module.exports = {
       }
     },
     {
-      name      : 'My Nano Ninja - CRON',
+      name      : 'My Banano Ninja - CRON',
       script    : 'cron',
       "log_date_format" : "YYYY-MM-DD HH:mm:ss",
       env: {
         NODE_ENV: 'production',
-        DOMAIN: 'https://mynano.ninja',
-        NODE_RPC: 'http://[::1]:7076',
-        NODE_WS: 'ws://[::1]:7078',
-        MONGO_URL: 'mongodb://localhost:27017/mynanoninja',
+        DOMAIN: 'https://mybanano.ninja',
+        NODE_RPC: 'http://[::1]:7072',
+        NODE_WS: 'ws://[::1]:7074',
+        MONGO_URL: 'mongodb://localhost:27017/mybananoninja',
         SENTRY_URL: '',
         EMAIL_HOST: 'smtp.myhost.com',
-        EMAIL_USER: 'alert@mynano.ninja',
+        EMAIL_USER: 'alert@mybanano.ninja',
         EMAIL_PASS: 'mypassword',
         DISCORD_HOOK: 'https://webhook.url',
         DRPC_REPSONLINE: '[]'

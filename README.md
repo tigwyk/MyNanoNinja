@@ -4,19 +4,19 @@
 </div>
 <hr />
 
-# My Nano Ninja
+# My Banano Ninja (we're not very creative)
 
-The perfect tool for Nano representatives lists and network statistics.
+The perfect tool for Banano representatives lists and network statistics.
 
-## What is Nano?
+## What is Banano?
 
-Nano's goal is to become "a global currency with instantaneous transactions and zero fees over a secure, decentralized network." More information is available over on the official [Nano repository](https://github.com/nanocurrency/raiblocks).
+Banano is a feeless, instant, rich in potassium cryptocurrency powered by DAG technology disrupting the meme economy. More information is available over on the official [Banano website](https://banano.cc).
 
 ## Prerequisites
 
 - Webserver like nginx as a reverse proxy
 - MongoDB
-- Nano Node with RPC enabled
+- Banano Node with RPC enabled
 - Node.js
 - PM2 `npm install pm2 -g`
 

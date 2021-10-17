@@ -1,6 +1,6 @@
 <% include ../../partials/header.ejs %>
 
-<h1>My Nano Ninja - Node API</h1>
+<h1>My Banano Ninja - Node API</h1>
 <h4>Build awesome apps with the Ninja!</h4>
 
 <p>Do you want to build your project with Nano but don't want to run your own node? The Ninja is here to help you!</p>
@@ -12,7 +12,7 @@
       <h4 class="my-0 font-weight-normal">Free</h4>
     </div>
     <div class="card-body">
-      <h1 class="card-title pricing-card-title">0 NANO</h1>
+      <h1 class="card-title pricing-card-title">0 BAN</h1>
       <ul class="list-unstyled mt-3 mb-4">
         <li>500 tokens / 60 mins</li>
         <li>For testing</li>
@@ -26,10 +26,10 @@
       <h4 class="my-0 font-weight-normal">Pro</h4>
     </div>
     <div class="card-body">
-      <h1 class="card-title pricing-card-title">0.001 NANO<small class="text-muted">/ token</small></h1>
+      <h1 class="card-title pricing-card-title">0.001 BAN<small class="text-muted">/ token</small></h1>
       <ul class="list-unstyled mt-3 mb-4">
         <li>Pay-as-you-go</li>
-        <li>Fill up with NANO</li>
+        <li>Fill up with BAN</li>
         <li>Any project size</li>
       </ul>
       <a href="#pro" class="btn btn-lg btn-block btn-primary">Get started</a>
@@ -38,7 +38,7 @@
 </div>
 
 <h2>Direct RPC Access</h2>
-<p>With this endpoint you can communicate with the Nano Node directly.</p>
+<p>With this endpoint you can communicate with the Banano Node directly.</p>
 <pre>https://mynano.ninja/api/node</pre>
 <p>
   The following actions are available:<br>
@@ -162,7 +162,7 @@
         window.acceptNano.startPayment({
           data: {
             amount: ($('#moreapitokens').val() * 0.001),
-            currency: 'nano'
+            currency: 'banano'
           },
           onStart: (paymentData) => {
             console.log('onStart', paymentData)
