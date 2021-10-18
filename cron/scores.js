@@ -10,7 +10,7 @@ cron.schedule('5 * * * *', updateScore);
 function updateScore() {
   console.log('SCORES: Started');
   Account.find()
-    .where('votingweight').gte(1000000000000000000000000000000000) // 1000 NANO minimum
+    .where('votingweight').gte(100000000000000000000000000000000) // 1000 BANANO minimum
     .exec(function (err, accounts) {
       if (err) {
         console.error('SCORES:', err);
