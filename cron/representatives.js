@@ -36,7 +36,8 @@ function updateRepresentatives() {
 
     async.forEachOfSeries(reps, (weight, rep, callback) => {
 
-      checkRepresentative(rep, weight, callback)
+      //checkRepresentative(rep, weight, callback)
+      await checkRepresentative(rep, weight, callback)
 
     }, err => {
       if (err) {
@@ -48,7 +49,7 @@ function updateRepresentatives() {
   });
 }
 
-function checkRepresentative(rep, weight, cb) {
+async function checkRepresentative(rep, weight, cb) {
   /*
   Account.findOne({
     'account': rep
