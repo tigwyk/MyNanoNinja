@@ -49,6 +49,7 @@ function updateRepresentatives() {
 }
 
 function checkRepresentative(rep, weight, cb) {
+  /*
   Account.findOne({
     'account': rep
   }, function (err, account) {
@@ -71,4 +72,18 @@ function checkRepresentative(rep, weight, cb) {
       cb();
     });
   });
+  */
+  var account = await Account.findOne({ account: rep }).exec();
+  console.log(account);
+
+  if (!account) {
+    var account = new Account();
+    account.account = rep;
+  }
+  account.votingweight = weight;
+
+  var save = account.save();
+  if(!save){
+    console.log("Some error");
+  }
 }
