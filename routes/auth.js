@@ -20,10 +20,10 @@ module.exports = function (passport, nanorpc) {
   });
 
   // Nano check
-  router.get('/connect/nano', isLoggedIn, function (req, res) {
+  router.get('/connect/banano', isLoggedIn, function (req, res) {
     var user = req.user;
 
-    res.render('auth/nano', { 
+    res.render('auth/banano', { 
       loggedin: req.isAuthenticated(),
       user : req.user,
       payment_api: process.env.PAYMENT_API,
