@@ -26,7 +26,6 @@ var statisticsVersionsSchema = mongoose.Schema({
         18: { type: Number, default: 0 },
         19: { type: Number, default: 0 },
         20: { type: Number, default: 0 },
-        21: { type: Number, default: 0 },
         22: { type: Number, default: 0 },
     }
 

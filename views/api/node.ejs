@@ -147,11 +147,12 @@
 </p>
 <% } %>
 
-<script src="/static/js/accept-nano/index.js"></script>
+<!-- <script src="/static/js/accept-nano/index.js"></script> -->
+<script src="https://unpkg.com/@accept-banano/client@2"></script>
 
 <script>
-  window.acceptNano.setup({
-    apiURL: '<%= payment_api %>', // URL of your Accept NANO server (String, required)
+  const session = window.acceptBanano.createSession({
+    apiHost: '<%= payment_api %>', // URL of your Accept NANO server (String, required)
     debug: false, // used for enabling debug mode, (Bool, non-required, false by default)
     pollInterval: 1500, // time period (ms) to check for verification of the payment sessions (Number, non-required, 1500 by default)
   });
@@ -159,25 +160,27 @@
   init.push(function () {
     $("#getmore").click(
       function () {
-        window.acceptNano.startPayment({
-          data: {
-            amount: ($('#moreapitokens').val() * 0.001),
-            currency: 'banano'
-          },
-          onStart: (paymentData) => {
-            console.log('onStart', paymentData)
-          },
-          onSuccess: (paymentData) => {
-            console.log('onSuccess', paymentData)
-            verifyPayment(paymentData.token)
-          },
-          onFailure: (failureReason) => {
-            console.log('onFailure', failureReason)
+        session.createPayment({
+            amount: '<%= amount %>',
+            currency: 'BANANO'
+        })
+
+        session.on('start', (paymentData) => {
+          console.log('onStart', paymentData)
+        })
+
+        session.on('end', (error, paymentData) => {
+          if(error) {
+            console.log('onFailure', error)
             setPaymentStatus('Error: ' + failureReason);
-          },
-          onCancel: () => {
-            setPaymentStatus('Payment cancelled.');
           }
+
+          console.log('onSuccess', paymentData)
+          verifyPayment(paymentData.token)
+        })
+
+        session.on('cancel', (error, paymentData) => {
+          setPaymentStatus('Verification cancelled.');
         })
       }
     )
