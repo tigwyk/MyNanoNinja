@@ -28,10 +28,11 @@
 
 </div>
 
-<script src="/static/js/accept-banano/index.js"></script>
+<!-- <script src="/static/js/accept-banano/index.js"></script> -->
+<script src="https://unpkg.com/@accept-banano/client@2"></script>
 
 <script>
-  window.acceptBanano.setup({
+  window.acceptBanano.createSession({
     apiURL: '<%= payment_api %>', // URL of your Accept NANO server (String, required)
     debug: false, // used for enabling debug mode, (Bool, non-required, false by default)
     pollInterval: 1500, // time period (ms) to check for verification of the payment sessions (Number, non-required, 1500 by default)
@@ -40,7 +41,7 @@
   init.push(function () {
     $("#banano-button").click(
       function () {
-        window.acceptNano.startPayment({
+        window.acceptBanano.startPayment({
           data: {
             amount: '<%= amount %>',
             currency: 'banano'
