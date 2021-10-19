@@ -41,7 +41,7 @@
   init.push(function () {
     $("#banano-button").click(
       function () {
-        window.acceptBanano.startPayment({
+        window.acceptBanano.createPayment({
           data: {
             amount: '<%= amount %>',
             currency: 'banano'
