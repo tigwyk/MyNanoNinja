@@ -34,7 +34,7 @@
 <script>
   const session = window.acceptBanano.createSession({
     apiURL: '<%= payment_api %>', // URL of your Accept NANO server (String, required)
-    debug: false, // used for enabling debug mode, (Bool, non-required, false by default)
+    debug: true, // used for enabling debug mode, (Bool, non-required, false by default)
     pollInterval: 1500, // time period (ms) to check for verification of the payment sessions (Number, non-required, 1500 by default)
   });
 
@@ -42,24 +42,26 @@
     $("#banano-button").click(
       function () {
         session.createPayment({
-          data: {
             amount: '<%= amount %>',
             currency: 'banano'
-          },
-          onStart: (paymentData) => {
-            console.log('onStart', paymentData)
-          },
-          onSuccess: (paymentData) => {
-            console.log('onSuccess', paymentData)
-            verifyPayment(paymentData.token)
-          },
-          onFailure: (failureReason) => {
-            console.log('onFailure', failureReason)
+        })
+
+        session.on('start', (paymentData) => {
+          console.log('onStart', paymentData)
+        })
+
+        session.on('end', (error, paymentData) => {
+          if(error) {
+            console.log('onFailure', error)
             setPaymentStatus('Error: ' + failureReason);
-          },
-          onCancel: () => {
-            setPaymentStatus('Verification cancelled.');
           }
+
+          console.log('onSuccess', paymentData)
+          verifyPayment(paymentData.token)
+        })
+
+        session.on('cancel', (error, paymentData) => {
+          setPaymentStatus('Verification cancelled.');
         })
       }
     )
