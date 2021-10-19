@@ -25,7 +25,7 @@ router.get('/addresses', function (req, res, next) {
 
   if(req.query.address_type && req.query.address_type !== '300'){
     res.status(400).json({
-      "message": "Only Nano addresses are supported",
+      "message": "Only Banano addresses are supported",
     });
     return 
   }

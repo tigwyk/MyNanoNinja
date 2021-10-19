@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var async = require("async");
 
-mongoose.connect('mongodb://localhost:27017/mynanoninja',
+mongoose.connect('mongodb://mongodb:27017/mybananoninja',
   { useNewUrlParser: true }
 );
 
