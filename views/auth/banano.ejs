@@ -32,7 +32,7 @@
 <script src="https://unpkg.com/@accept-banano/client@2"></script>
 
 <script>
-  window.acceptBanano.createSession({
+  const session = window.acceptBanano.createSession({
     apiURL: '<%= payment_api %>', // URL of your Accept NANO server (String, required)
     debug: false, // used for enabling debug mode, (Bool, non-required, false by default)
     pollInterval: 1500, // time period (ms) to check for verification of the payment sessions (Number, non-required, 1500 by default)
@@ -41,7 +41,7 @@
   init.push(function () {
     $("#banano-button").click(
       function () {
-        window.acceptBanano.createPayment({
+        session.createPayment({
           data: {
             amount: '<%= amount %>',
             currency: 'banano'
