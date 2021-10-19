@@ -50,13 +50,13 @@ Vue.component('account-alias-sm', {
   template: '<a v-bind:href="\'/account/\'+ account"><b v-if="alias">{{alias}}</b><span v-if="!alias">{{account.substring(0,10)}}...</span></a>'
 })
 
-Vue.filter('toMnano', function (value) {
+Vue.filter('toBanano', function (value) {
   if (!value) return ''
   value = value.toString()
 
-  multNANO = Big('1000000000000000000000000000000');
+  multBANANO = Big('100000000000000000000000000000');
 
-  return Big(value).div(multNANO).toFixed(6).toString()
+  return Big(value).div(multBANANO).toFixed(6).toString()
 })
 
 Vue.filter('formatHash', function (hash) {

@@ -122,7 +122,7 @@ function prepareGraphDataWeight(data) {
     } else {
       chartdata.labels.push('Unknown Version');
     }
-    chartdata.datasets[0].data.push(toMnano(value.totalWeight, 0));
+    chartdata.datasets[0].data.push(toBanano(value.totalWeight, 0));
     chartdata.datasets[0].backgroundColor.push(chartColors[colorcount]);
     colorcount++;
   }

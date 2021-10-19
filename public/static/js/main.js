@@ -99,13 +99,13 @@ function formatDate(date) {
   return moment(date).format('YYYY-MM-DD HH:mm');
 }
 
-function toMnano(value, decimals = 6) {
+function toBanano(value, decimals = 6) {
   if (!value) return ''
   value = value.toString()
 
-  multNANO = Big('1000000000000000000000000000000');
+  multBANANO = Big('100000000000000000000000000000');
 
-  return Big(value).div(multNANO).toFixed(decimals).toString()
+  return Big(value).div(multBANANO).toFixed(decimals).toString()
 }
 
 
