@@ -5,7 +5,7 @@ module.exports = function (passport, nanorpc) {
   var router = express.Router();
   var Account = require('../models/account');
   const Big = require('big.js');
-  multNANO = Big('1000000000000000000000000000000');
+  multBANANO = Big('100000000000000000000000000000');
 
   /* GET users listing. */
   router.get('/login', function (req, res, next) {
@@ -28,12 +28,12 @@ module.exports = function (passport, nanorpc) {
       user : req.user,
       payment_api: process.env.PAYMENT_API,
       amount: process.env.VERIFICATION_AMOUNT,
-      amount_raw: Big(process.env.VERIFICATION_AMOUNT).times(multNANO).toFixed().toString()
+      amount_raw: Big(process.env.VERIFICATION_AMOUNT).times(multBANANO).toFixed().toString()
     });
 
   });
 
-  router.get('/connect/nano/:token/verify', isLoggedIn, function (req, res) {
+  router.get('/connect/banano/:token/verify', isLoggedIn, function (req, res) {
     var user = req.user;
     var token = req.params.token;
 
@@ -75,7 +75,7 @@ module.exports = function (passport, nanorpc) {
         
             account.save(function (err) {
               if (err) {
-                console.log("Auth - Nano Token Verify - Error saving account", err);
+                console.log("Auth - Banano Token Verify - Error saving account", err);
               }
               output.status = 'OK';
               output.sender = sender;
