@@ -45,6 +45,7 @@ module.exports = function (passport, nanorpc) {
     }, function(err, response, data){
       if (err || response.statusCode !== 200) {
         output.error = 'API error';
+        console.log(data);
         res.send(output);
 
       } else if(data.fulfilled === false){
